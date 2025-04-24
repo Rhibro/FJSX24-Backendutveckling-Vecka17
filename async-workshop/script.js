@@ -25,14 +25,12 @@ async function fetchUser() {
         // simulate filtering based on zoneId input, if needed
         const units = data.zoneStatus?.[0]?.units;
 
+        // display the fetched data in html
         document.querySelector("#output").innerHTML = `Zone: ${zoneId || "default"} - Units: ${units}`;
+        
+        // show success status
         document.querySelector("#status").innerHTML = "Device data fetched successfully!";
 
-        // // display the fetched data in html
-        // document.querySelector("#output").innerText = JSON.stringify(data.zoneStatus[0].units);
-
-        // // show success status
-        // document.querySelector("#status").innerText = "Data fetched";
     } catch (error) {
         console.error("Fetch error: ", error);
 
@@ -40,3 +38,13 @@ async function fetchUser() {
         document.querySelector("#status").innerText = "Something went wrong when we tried to fetch the data.";
     }
 }
+
+ 
+
+
+
+        // // display the fetched data in html
+        // document.querySelector("#output").innerText = JSON.stringify(data.zoneStatus[0].units);
+
+        // // show success status
+        // document.querySelector("#status").innerText = "Data fetched";
